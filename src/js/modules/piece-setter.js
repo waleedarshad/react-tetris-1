@@ -4,6 +4,7 @@ import key from 'keymaster';
 import AppActions from '../actions/app-actions';
 import GameStore from '../stores/game-store';
 import DetectShift from '../modules/detect-shift';
+import BoardStore from '../stores/board-store'
 const keyboardMap = {
   down: AppActions.moveDown,
   left: AppActions.moveLeft,
@@ -44,8 +45,8 @@ export default function createPieceSetter(board) {
         }
       }
   }catch(error){
-    GameStore.onLost();
-    removeKeyboardEvents();
+    board[-1][-1] = className;
+
     
    }
  }
