@@ -45,7 +45,8 @@ export default function createPieceSetter(board) {
         }
       }
   }catch(error){
-    board[-1][-1] = className;
+    GameStore.pause()
+    return true
 
     
    }
